@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+<script defer src="{% static 'js/script.js'%}"></script>
+
+{% block body %}
+
+
+    <div class="tab-content ">
+      <h2 class="card-title" style="text-align: center;">الفصول</h2>
+      
+    
+      <div class="container ">
+        <div class="row">
+      
+        {% for lev in Level  %}
+        <div class="col-sm-3 grid-margin stretch-card card p-3 " >
+          
+          
+             
+              <h6 class="card-title"> {{lev.level}}  </h6>
+              {% for clas in classs.get_children %}
+              <li>{{clas.level }}</li>
+              {% endfor %}
+          
+          
+        </div>
+        {% endfor %}
+       
+      
+    </div>
+    </div>
+     
+   
+    </div>
+   
+    <!-- content-wrapper ends -->
+    <!-- partial:../../partials/_footer.html -->
+    
+    <!-- partial -->
+  
+
+  {% endblock body %}
